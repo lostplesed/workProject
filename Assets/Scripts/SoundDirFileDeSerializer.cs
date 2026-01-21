@@ -34,40 +34,28 @@ public class DirectoryStructure
     public List<DirectoryItem> items;
 }
 
-public class OggFileSerializer : MonoBehaviour
+public class SoundDirFileDeSerializer
 {
-    [SerializeField] private string jsonFilePath = "Assets/dir.json";
-    [SerializeField] private string outputFilePath = "Assets/ogg_files.json";
-
-    public OggFileList SerializeOggFiles()
+    public static OggFileList Deserialize(string str)
     {
-        if (!File.Exists(jsonFilePath))
-        {
-            Debug.LogError($"File not found: {jsonFilePath}");
-            return null;
-        }
+        OggFileList list = new OggFileList();
 
-        string jsonContent = File.ReadAllText(jsonFilePath);
-        DirectoryStructure dirStructure = JsonConvert.DeserializeObject<DirectoryStructure>(jsonContent);
-
+        DirectoryStructure dirStructure = JsonConvert.DeserializeObject<DirectoryStructure>(str);
         if (dirStructure == null || dirStructure.items == null)
         {
             Debug.LogError("Failed to parse directory structure");
-            return null;
+            return list;
         }
-
-        OggFileList oggFileList = new OggFileList();
 
         foreach (var item in dirStructure.items)
         {
-            ExtractOggFiles(item, oggFileList.files);
+            ExtractOggFiles(item, list.files);
         }
 
-        Debug.Log($"Found {oggFileList.files.Count} ogg files");
-        return oggFileList;
+        return list;
     }
 
-    private void ExtractOggFiles(DirectoryItem item, List<OggFileInfo> oggFiles)
+    private static void ExtractOggFiles(DirectoryItem item, List<OggFileInfo> oggFiles)
     {
         if (item == null) return;
 
@@ -89,25 +77,5 @@ public class OggFileSerializer : MonoBehaviour
                 ExtractOggFiles(child, oggFiles);
             }
         }
-    }
-
-    public void SaveToFile()
-    {
-        OggFileList oggFileList = SerializeOggFiles();
-
-        if (oggFileList == null)
-        {
-            return;
-        }
-
-        string json = JsonUtility.ToJson(oggFileList, true);
-        File.WriteAllText(outputFilePath, json);
-        Debug.Log($"Saved ogg files list to: {outputFilePath} oggFileList count = {oggFileList.files.Count}");
-    }
-
-    [ContextMenu("Serialize Ogg Files")]
-    public void SerializeAndSave()
-    {
-        SaveToFile();
     }
 }

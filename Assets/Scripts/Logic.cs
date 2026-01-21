@@ -10,7 +10,10 @@ public class Logic : MonoBehaviour
 {
     [SerializeField] private AudioSource m_audioSource;
     [SerializeField] private Button m_buttonOne;
+    [SerializeField] private Button m_buttonRand;
+    [SerializeField] private Button m_buttonChoose;
     private string oggUrl = "https://inner-cdn.diguogame.com/SoundProjects/Test/main/Sound/Music/BGM_CORE_GAME_BG_LOOP.ogg";
+    private string dirJsonUrl = "http://192.168.50.152:8888/download?path=.files.json";
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,10 @@ public class Logic : MonoBehaviour
             }
             m_audioSource.Stop();
             StartCoroutine(LoadAndPlayOne());
+        });
+        m_buttonChoose.onClick.AddListener(() =>
+        {
+            StartCoroutine(DownloadAndPrintJson());
         });
     }
 
@@ -44,6 +51,26 @@ public class Logic : MonoBehaviour
             AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
             m_audioSource.clip = clip;
             m_audioSource.Play();
+        }
+    }
+
+    private IEnumerator DownloadAndPrintJson()
+    {
+        using (UnityWebRequest req = UnityWebRequest.Get(dirJsonUrl))
+        {
+            yield return req.SendWebRequest();
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"Download JSON failed: {req.error}");
+                Debug.LogError($"File URL: {dirJsonUrl}");
+                Debug.LogError($"Response Code: {req.responseCode}");
+                yield break;
+            }
+
+            string jsonContent = req.downloadHandler.text;
+            OggFileList list = SoundDirFileDeSerializer.Deserialize(jsonContent);
+            Debug.Log($"list count:{list.files.Count}");
         }
     }
 }
