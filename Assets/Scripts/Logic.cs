@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -12,6 +9,11 @@ public class Logic : MonoBehaviour
     [SerializeField] private Button m_buttonOne;
     [SerializeField] private Button m_buttonRand;
     [SerializeField] private Button m_buttonChoose;
+    [SerializeField] private ScrollRect m_scrollRect;
+    [SerializeField] private GameObject m_scrollContent;
+    [SerializeField] private GameObject m_scrollCell;
+
+
     private string oggUrl = "https://inner-cdn.diguogame.com/SoundProjects/Test/main/Sound/Music/BGM_CORE_GAME_BG_LOOP.ogg";
     private string dirJsonUrl = "http://192.168.50.152:8888/download?path=.files.json";
 
@@ -30,7 +32,18 @@ public class Logic : MonoBehaviour
         });
         m_buttonChoose.onClick.AddListener(() =>
         {
-            StartCoroutine(DownloadAndPrintJson());
+            m_scrollRect.gameObject.SetActive(!m_scrollRect.gameObject.activeSelf);
+            if (!m_scrollRect.gameObject.activeSelf)
+            {
+                foreach (Transform child in m_scrollContent.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+            else
+            {
+                StartCoroutine(ChooseFromRemoteDir());
+            }
         });
     }
 
@@ -54,7 +67,7 @@ public class Logic : MonoBehaviour
         }
     }
 
-    private IEnumerator DownloadAndPrintJson()
+    private IEnumerator ChooseFromRemoteDir()
     {
         using (UnityWebRequest req = UnityWebRequest.Get(dirJsonUrl))
         {
@@ -71,6 +84,12 @@ public class Logic : MonoBehaviour
             string jsonContent = req.downloadHandler.text;
             OggFileList list = SoundDirFileDeSerializer.Deserialize(jsonContent);
             Debug.Log($"list count:{list.files.Count}");
+            for (int i = 0; i < list.files.Count; i++)
+            {
+                GameObject cell =  Instantiate(m_scrollCell, m_scrollContent.transform);
+                ScrollViewCell scrollViewCell = cell.GetComponent<ScrollViewCell>();
+                scrollViewCell.FileInfo = list.files[i];
+            }
         }
     }
 }
