@@ -623,6 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178202802}
   - component: {fileID: 1178202803}
+  - component: {fileID: 1178202804}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -659,7 +660,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audioSource: {fileID: 296417536}
   m_buttonOne: {fileID: 101384597}
-  oggUrl: https://inner-cdn.diguogame.com/SoundProjects/Test/main/Sound/Music/BGM_CORE_GAME_BG_LOOP.ogg
+--- !u!114 &1178202804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178202801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a148f062f24714b0419ee2420911d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFilePath: Assets/dir.json
+  outputFilePath: Assets/ogg_files.json
 --- !u!1 &1275466742
 GameObject:
   m_ObjectHideFlags: 0

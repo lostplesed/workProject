@@ -1,0 +1,280 @@
+{
+    "files": [
+        {
+            "name": "SFX_CORE_COMMON_BUTTON_CLICK.ogg",
+            "size": 6916,
+            "mtime": 1768459102925,
+            "relativePath": "Test/main/Sound/Common/SFX_CORE_COMMON_BUTTON_CLICK.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_DEAL.ogg",
+            "size": 12267,
+            "mtime": 1767846103467,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_DEAL.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_DEAL_01.ogg",
+            "size": 14134,
+            "mtime": 1768459103230,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_DEAL_01.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_DEAL_02.ogg",
+            "size": 12964,
+            "mtime": 1768459103231,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_DEAL_02.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_DEAL_03.ogg",
+            "size": 16179,
+            "mtime": 1768459103231,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_DEAL_03.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_HARDFLIP.ogg",
+            "size": 18974,
+            "mtime": 1767846103467,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_HARDFLIP.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_HARDFLIP_01.ogg",
+            "size": 20299,
+            "mtime": 1768459103231,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_HARDFLIP_01.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_HARDFLIP_02.ogg",
+            "size": 23458,
+            "mtime": 1768459103232,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_HARDFLIP_02.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_HARDFLIP_03.ogg",
+            "size": 18454,
+            "mtime": 1768459103254,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_HARDFLIP_03.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_CARD_NORMALFLIP.ogg",
+            "size": 13846,
+            "mtime": 1768459103255,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_CARD_NORMALFLIP.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_AMAZING.ogg",
+            "size": 13509,
+            "mtime": 1767846103472,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_AMAZING.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_01.ogg",
+            "size": 44127,
+            "mtime": 1768459103325,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_01.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_02.ogg",
+            "size": 44507,
+            "mtime": 1768459103325,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_02.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_03.ogg",
+            "size": 44075,
+            "mtime": 1768459103334,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_03.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_04.ogg",
+            "size": 42830,
+            "mtime": 1768459103334,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_04.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_05.ogg",
+            "size": 41199,
+            "mtime": 1768459103335,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_05.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_COMBO_06.ogg",
+            "size": 40288,
+            "mtime": 1768459103335,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_COMBO_06.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_DOUBLEMERGE.ogg",
+            "size": 53294,
+            "mtime": 1768459103336,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_DOUBLEMERGE.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_FOUNDATION.ogg",
+            "size": 78295,
+            "mtime": 1768459103336,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_FOUNDATION.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_GOOD.ogg",
+            "size": 12540,
+            "mtime": 1767846103473,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_GOOD.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_GREAT.ogg",
+            "size": 14358,
+            "mtime": 1767846103491,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_GREAT.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O1.ogg",
+            "size": 21776,
+            "mtime": 1767846103540,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O1.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O2.ogg",
+            "size": 21776,
+            "mtime": 1767846103541,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O2.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O3.ogg",
+            "size": 21776,
+            "mtime": 1767846103542,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_INCREDIBLE_O3.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_INLAID.ogg",
+            "size": 23996,
+            "mtime": 1768284616604,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_INLAID.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_PREBUILT.ogg",
+            "size": 24724,
+            "mtime": 1768459103350,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_PREBUILT.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_FEEDBACK_THUMBUP.ogg",
+            "size": 51801,
+            "mtime": 1768459103352,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_FEEDBACK_THUMBUP.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_HINT_USE.ogg",
+            "size": 21993,
+            "mtime": 1768459103352,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_HINT_USE.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_PICTURE_COMPLETE.ogg",
+            "size": 48994,
+            "mtime": 1768459103357,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_PICTURE_COMPLETE.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_PICTURE_LIGHT.ogg",
+            "size": 46761,
+            "mtime": 1767846103463,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_PICTURE_LIGHT.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_PIECE_DRAG.ogg",
+            "size": 12756,
+            "mtime": 1768459103359,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_PIECE_DRAG.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_PIECE_MERGE.ogg",
+            "size": 32531,
+            "mtime": 1768459103360,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_PIECE_MERGE.ogg"
+        },
+        {
+            "name": "SFX_CORE_GAME_PIECE_RELEASE.ogg",
+            "size": 9190,
+            "mtime": 1768459103360,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_GAME_PIECE_RELEASE.ogg"
+        },
+        {
+            "name": "SFX_CORE_RESULT_COIN_COLLECT.ogg",
+            "size": 33180,
+            "mtime": 1767937763001,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_RESULT_COIN_COLLECT.ogg"
+        },
+        {
+            "name": "SFX_CORE_RESULT_LIKE_CLICK.ogg",
+            "size": 33977,
+            "mtime": 1768459103360,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_RESULT_LIKE_CLICK.ogg"
+        },
+        {
+            "name": "SFX_CORE_RESULT_OPEN_CHEST.ogg",
+            "size": 61794,
+            "mtime": 1768284616604,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_RESULT_OPEN_CHEST.ogg"
+        },
+        {
+            "name": "SFX_CORE_RESULT_SHOW_IN_01.ogg",
+            "size": 45656,
+            "mtime": 1768459103364,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_RESULT_SHOW_IN_01.ogg"
+        },
+        {
+            "name": "SFX_CORE_RESULT_SHOW_IN_02.ogg",
+            "size": 46546,
+            "mtime": 1768459103365,
+            "relativePath": "Test/main/Sound/Game/SFX_CORE_RESULT_SHOW_IN_02.ogg"
+        },
+        {
+            "name": "SFX_CORE_CHALLENGE_SUCCESS.ogg",
+            "size": 24355,
+            "mtime": 1768395935095,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_CHALLENGE_SUCCESS.ogg"
+        },
+        {
+            "name": "SFX_CORE_CHALLENGE_TROPHY_COLLECT.ogg",
+            "size": 38237,
+            "mtime": 1768395935096,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_CHALLENGE_TROPHY_COLLECT.ogg"
+        },
+        {
+            "name": "SFX_CORE_HOME_BIGPICTURE_COLLECT.ogg",
+            "size": 13105,
+            "mtime": 1768459103393,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_HOME_BIGPICTURE_COLLECT.ogg"
+        },
+        {
+            "name": "SFX_CORE_HOME_BIGPICTURE_COMPLETE.ogg",
+            "size": 45630,
+            "mtime": 1768459103393,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_HOME_BIGPICTURE_COMPLETE.ogg"
+        },
+        {
+            "name": "SFX_CORE_HOME_BIGPICTURE_EXPAND.ogg",
+            "size": 55457,
+            "mtime": 1768459103394,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_HOME_BIGPICTURE_EXPAND.ogg"
+        },
+        {
+            "name": "SFX_CORE_HOME_BIGPICTURE_STAMP.ogg",
+            "size": 27410,
+            "mtime": 1768459103394,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_HOME_BIGPICTURE_STAMP.ogg"
+        },
+        {
+            "name": "SFX_CORE_HOME_KEY_ROTATE.ogg",
+            "size": 10255,
+            "mtime": 1768459103394,
+            "relativePath": "Test/main/Sound/Home/SFX_CORE_HOME_KEY_ROTATE.ogg"
+        },
+        {
+            "name": "BGM_CORE_GAME_BG_LOOP.ogg",
+            "size": 953727,
+            "mtime": 1768370372493,
+            "relativePath": "Test/main/Sound/Music/BGM_CORE_GAME_BG_LOOP.ogg"
+        }
+    ]
+}
