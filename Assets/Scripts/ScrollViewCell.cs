@@ -17,6 +17,7 @@ public class ScrollViewCell : MonoBehaviour
             m_fileInfo = value;
 
             m_textFile.text = Path.GetFileNameWithoutExtension(m_fileInfo.name);
+            RefreshState();
         }
     }
 
@@ -25,7 +26,20 @@ public class ScrollViewCell : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            Debug.Log(m_fileInfo.name);
+            if (RandMusic.S.choose.Contains(m_fileInfo.relativePath))
+            {
+                RandMusic.S.choose.Remove(m_fileInfo.relativePath);
+            }
+            else
+            {
+                RandMusic.S.choose.Add(m_fileInfo.relativePath);
+            }
+            RefreshState();
         });
+    }
+
+    void RefreshState()
+    {
+        m_textState.text = RandMusic.S.choose.Contains(m_fileInfo.relativePath) ? "O" : "X";
     }
 }

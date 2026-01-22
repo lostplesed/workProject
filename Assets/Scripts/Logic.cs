@@ -1,4 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -13,22 +16,31 @@ public class Logic : MonoBehaviour
     [SerializeField] private GameObject m_scrollContent;
     [SerializeField] private GameObject m_scrollCell;
 
+    private List<string> randPlayList = new List<string>();
 
     private string oggUrl = "https://inner-cdn.diguogame.com/SoundProjects/Test/main/Sound/Music/BGM_CORE_GAME_BG_LOOP.ogg";
+    private string oggDirUrl = "https://inner-cdn.diguogame.com/SoundProjects/";
     private string dirJsonUrl = "http://192.168.50.152:8888/download?path=.files.json";
 
     // Start is called before the first frame update
     void Start()
     {
+        new RandMusic();
         oggUrl = "http://192.168.50.152:8888/download?path=Test%2Fmain%2FSound%2FMusic%2FBGM_CORE_GAME_BG_LOOP.ogg";
+        oggDirUrl = "http://192.168.50.152:8888/download?path=";
         m_buttonOne.onClick.AddListener(() =>
         {
             if (m_audioSource.clip != null)
-            {
                 m_audioSource.clip = null;
-            }
             m_audioSource.Stop();
             StartCoroutine(LoadAndPlayOne());
+        });
+        m_buttonRand.onClick.AddListener(() =>
+        {
+            if (m_audioSource.clip != null)
+                m_audioSource.clip = null;
+            m_audioSource.Stop();
+            StartCoroutine(LoadAndPlayRand());
         });
         m_buttonChoose.onClick.AddListener(() =>
         {
@@ -67,6 +79,45 @@ public class Logic : MonoBehaviour
         }
     }
 
+    private IEnumerator LoadAndPlayRand()
+    {
+        if (RandMusic.S.choose.Count == 0)
+        {
+            yield break;
+        }
+        else
+        {
+            string hasFiles = "";
+            RandMusic.S.choose.ForEach(file => hasFiles += file + ",");
+            if (hasFiles.Length > 0) hasFiles = hasFiles.Substring(0, hasFiles.Length - 1);
+            Debug.Log("has: " + hasFiles);
+            randPlayList.RemoveAll(ele => !RandMusic.S.choose.Contains(ele));
+            if (randPlayList.Count == 0)
+                randPlayList.AddRange(RandMusic.S.choose.ToList());
+            int randomIndex = Random.Range(0, randPlayList.Count);
+            string selectedFile = randPlayList[randomIndex];
+            randPlayList.RemoveAt(randomIndex);
+
+            Debug.Log("play " + selectedFile);
+            using (UnityWebRequest req = UnityWebRequestMultimedia.GetAudioClip(Path.Join(oggDirUrl, selectedFile), AudioType.OGGVORBIS))
+            {
+                yield return req.SendWebRequest();
+
+                if (req.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError($"Load audio failed: {req.error}");
+                    Debug.LogError($"File URL: {oggUrl}");
+                    Debug.LogError($"Response Code: {req.responseCode}");
+                    yield break;
+                }
+
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
+                m_audioSource.clip = clip;
+                m_audioSource.Play();
+            }
+        }
+    }
+
     private IEnumerator ChooseFromRemoteDir()
     {
         using (UnityWebRequest req = UnityWebRequest.Get(dirJsonUrl))
@@ -84,6 +135,13 @@ public class Logic : MonoBehaviour
             string jsonContent = req.downloadHandler.text;
             OggFileList list = SoundDirFileDeSerializer.Deserialize(jsonContent);
             Debug.Log($"list count:{list.files.Count}");
+            List<string> curExist = new List<string>();
+            foreach (var file in list.files)
+            {
+                curExist.Add(file.relativePath);
+            }
+            RandMusic.S.choose.RemoveAll(ele => !curExist.Contains(ele));
+
             for (int i = 0; i < list.files.Count; i++)
             {
                 GameObject cell =  Instantiate(m_scrollCell, m_scrollContent.transform);
